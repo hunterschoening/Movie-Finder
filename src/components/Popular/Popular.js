@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Container } from '@mui/material';
+
 import InfiniteScroll from 'react-infinite-scroll-component';
 
 import Movies from '../Movies/Movies';
@@ -32,8 +33,8 @@ const Popular = () => {
             next={() => {
                 fetchData()
             }}
+            scrollThreshold={0.5}
             hasMore={true}
-            loader={<h4>Loading...</h4>}
             endMessage={<h4>You've seen it all!</h4>}
         >
             <Container maxWidth="xl" sx={{ paddingTop: "15px" }}>
